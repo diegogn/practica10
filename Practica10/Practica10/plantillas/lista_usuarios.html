@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Lista productos{% endblock %}
+{% block encabezado %}Lista productos{% endblock %}
+
+{% block contenido %}
+	{% for usuario in usuarios %}
+		
+		<h2>Usuario</h2>
+		<p>Nombre: {{usuario}}</p>
+		<h3>Productos</h3>
+		{% for rating in usuario.ratingitem_set.all %}
+				<p>Nombre: {{rating.item}}</p>
+				<p>Descripción: {{rating.item.description}}</p>
+				<p>Puntuación: {{rating.value}}</p>
+				</br>
+		{% empty %}
+			<li>Aún no hay productos puntuados</li>
+		{% endfor %}
+		</br>
+	
+	{% empty %}
+	<li>Aún no hay usuarios registrados</li>
+	{% endfor %}
+
+{% endblock %}

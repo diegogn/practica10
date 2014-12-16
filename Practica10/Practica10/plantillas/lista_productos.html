@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Lista productos{% endblock %}
+{% block encabezado %}Lista productos{% endblock %}
+
+{% block contenido %}
+	{% for producto in productos %}
+		
+		<h2>Producto</h2>
+		<p>{{producto.name}}</p>
+		<h3>Tiendas</h3>
+		{% for price in producto.price_set.all %}
+				<p>{{price.shop}}</p>
+		{% empty %}
+			<li>Aún no tiene tiendas asociadas</li>
+		{% endfor %}
+		</br>
+	
+	{% empty %}
+	<li>Aún no hay productos registrados</li>
+	{% endfor %}
+
+{% endblock %}

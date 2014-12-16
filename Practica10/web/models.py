@@ -26,7 +26,7 @@ class WebUser(models.Model):
     email = models.EmailField()
     age = IntegerRangeField(min_value=18)
     def __unicode__(self):
-        return self.name + self.surname
+        return self.name +" "+ self.surname
 
 class Shop(models.Model):
     name = models.CharField(max_length=50)
