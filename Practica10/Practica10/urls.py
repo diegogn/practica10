@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^$', 'web.views.inicio'),
     url(r'^lista_productos/', 'web.views.lista_productos'),
     url(r'^lista_usuarios/', 'web.views.lista_usuarios'),
+    url(r'^recomendaciones/', 'web.views.recomendaciones'),
     # Uncomment the admin/doc line below to enable admin documentation:
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     # Uncomment the next line to enable the admin:
