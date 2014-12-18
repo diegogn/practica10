@@ -151,6 +151,6 @@ def dictionary():
         ratingItems = RatingItem.objects.all().filter(webUser = user)
         ratedItems = {}
         for item in ratingItems:
-            ratedItems[item.item.name] = item.value
+            ratedItems[item.item.name] = float(item.value)
         dictionary[user.name+" "+user.surname] = ratedItems
     return dictionary

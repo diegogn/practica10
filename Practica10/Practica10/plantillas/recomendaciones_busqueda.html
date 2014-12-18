@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Lista de recomendaciones de {{user}} {% endblock %}
+{% block encabezado %}Lista de recomendaciones {{user}} {% endblock %}
+
+{% block contenido %}
+	<h3>Recomendaciones</h3>
+	{% for rec in recs %}
+		<p>Nombre Producto: {{rec}}</p>
+		{% empty %}
+			<li>No hay recomendaciones</li>
+		</br>
+	{% endfor %}
+
+{% endblock %}

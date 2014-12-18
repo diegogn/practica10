@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Buscar recomendaciones{% endblock %}
+{% block encabezado %}Buscar recomendaciones{% endblock %}
+
+{% block contenido %}
+	
+	<form id="formulario" method="post" action="">{% csrf_token %}
+	
+		{{formulario.as_p}}
+		<p><input type="submit" value="Buscar"/></p>
+	
+	</form>
+
+{% endblock %}
